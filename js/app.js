@@ -44,7 +44,7 @@ var app = angular.module('demo', []).controller('DemoCtrl', function($scope) {
         },
         {
             name: 'Ac12341234e',
-            desc: 'This directive allows you to add ACE editor elements.',
+            desc: 'testest',
             src: 'https://github.com/angular-ui/ui-ace',
             home: 'https://angular-ui.github.io/ui-ace/'
         },
