@@ -4,7 +4,7 @@ var App = angular.module('App', [])
 App.controller('educationController', function($scope, $http){
     $http.get('data/education.json')
     .then(function (res) {
-        $scope.education = res.data;
+        $scope.educations = res.data;
     });
 });
 

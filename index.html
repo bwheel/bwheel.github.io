@@ -51,8 +51,8 @@
             <header class="jumbotron" id="overview">
                 <div class="container">
                     <div class="col-sm-offset-1 col-sm-11 col-md-offset-2 col-md-10">
-                        <h1>Bwheel</h1>
-                        <p>The github resume of Byron Wheeler</p>
+                        <h1>Byron Wheeler</h1>
+                        <h5>Objective: <i>To pursue further learning in a technically related field.</i></h5>
                     </div>
                 </div>
             </header>
@@ -60,9 +60,20 @@
             <div class="container" >
                 <div class="row">
                     <div class=" col-sm-12  col-md-12">
-                        <section id="education">
+                        
+                        <section id="education" ng-controller="educationController">
                             <h1 class="page-header">Education</h1>
-                            
+                            <div class="list-group">
+                                <div ng-repeat="education in educations" >
+                                    <div class="pull-right">
+                                        <div >{{education.completionDate}}</div>
+                                        <div  ng-if="education.GPA">GPA: {{education.GPA}}</div>
+                                    </div>
+                                    <h3 class="list-group-item-heading">{{education.school}}</h3>
+                                    <p class="list-group-item-text">{{education.degree}}, {{education.major}}</p>
+                                    <br>
+                                </div>
+                            </div>
                         </section>
 
                         <section id="skills">

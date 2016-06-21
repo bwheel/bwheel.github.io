@@ -1,6 +1,16 @@
 [
     {
+        "school" : "Kansas State University",
+        "degree" : "Bachelor of Science",
+        "major" : "Computer Engineering",
+        "completionDate": "May 17, 2014",
+        "GPA": "3.33"
     },
     {
+        "school" : "Transportation Basic Officer Leadership Course",
+        "degree" : "Certificate of Completion",
+        "major" : "",
+        "completionDate": "January 29, 2016",
+        "GPA": ""
     }
 ]
