@@ -32,6 +32,6 @@ App.controller('jobController', function($scope, $http) {
 App.controller('awardController', function($scope, $http) {
     $http.get('data/awards.json')
     .then(function(res) {
-        $scope.award = res.data;
+        $scope.awards = res.data;
     });
 });
