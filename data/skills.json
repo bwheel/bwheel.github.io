@@ -1,6 +1,82 @@
 [
     {
+        "title" : "Programming Languages",
+        "skillTypes" : [
+            {
+                "name" : "Assembly"
+            },
+            {
+                "name":"C"
+            },
+            {
+                "name" : "C++"
+            },
+            {
+                "name":"C#"
+            },
+            {
+                "name" : "Java"
+            },
+            { 
+                "name" : "JavaScript"
+            },
+            { 
+                "name" : "HTML5"
+            },
+            {
+                "name":"CSS"
+            },
+            {
+                "name":"SQL"
+            },
+            {
+                "name" : "Python"
+            },
+            {
+                "name":"Ruby"
+            },
+            {
+                "name":"ASP"
+            },
+            {
+                "name" : "Razor"
+            },
+            {
+                "name":"VB"
+            }            
+        ]
     },
     {
+        "title" : "Frameworks and Libraries",
+        "skillTypes" : [
+            {
+                "name" : ".Net"
+            },
+            {
+                "name" : "ASP.NET"
+            },
+            {
+                "name" : "MVC.NET"
+            },
+            {
+                "name":"ADO.NET"
+            },
+            {
+                "name" : "LINQ.NET"
+            },
+            {
+                "name" : "jQuery"
+            },
+            {
+                "name" : "Bootstrap"
+            },
+            {
+                "name" : "NodeJS"
+            },
+            {
+                "name" : "AngularJS"
+            }
+            
+        ]
     }
 ]

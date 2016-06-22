@@ -1,6 +1,29 @@
 [
     {
+        "company" : "Netsmart",
+        "location" : "Leawood, KS",
+        "startDate" : "December, 2014",
+        "endDate" : "March, 2016",
+        "jobeTitle": "Software Engineer I",
+        "desc" : [
+            "Maintained five ASP.NET Web Form applications written in C# and VB.",
+            "Developed client benchmark reporting system",
+            "Create client password recovery system with MVC .NET.",
+            "Programmed web portal for administrators in C#, MVC .NET.",
+            "Generated over 500 client benchmark reports."
+        ]
     },
     {
+        "company" : "Castle Creations",
+        "location" : "Olathe, KS",
+        "startDate" : "May, 2014",
+        "endDate" : "December, 2014",
+        "jobeTitle": "Embedded Systems Engineer I",
+        "desc" : [
+            "Designed bluetooth low energy schematics.",
+            "Wrote embedded software in C++ for bluetooth devices.",
+            "Managed and produced electronic speed controller software written in C and Assembly.",
+            "Programmed multithreaded C# application for product testing.",
+        ]
     }
 ]

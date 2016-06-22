@@ -76,8 +76,16 @@
                             </div>
                         </section>
 
-                        <section id="skills">
+                        <section id="skills" ng-controller="skillsController">
                             <h1 class="page-header">Skills</h1>
+                            <ul ng-repeat="skill in skills | orderBy: '-title'">
+                                <li>
+                                    <h4>{{skill.title}}</h4>
+                                    <ul ng-repeat="skillType in skill.skillTypes">
+                                        <li >{{skillType.name}}</li>
+                                    </ul>
+                                </li>
+                            </ul>
                         </section>
 
                         <section id="repositories" ng-controller="repoController">
