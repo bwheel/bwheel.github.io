@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html id="top" lang="en" ng-app="App">
+<html id="top" lang="en">
     <head>
         <title>Bwheel Home Page</title>
 
@@ -8,7 +8,7 @@
         <link href="css/app.css" rel="stylesheet">
     </head>
 
-    <body  >
+    <body ng-app="MyApp" >
         
         <header class="navbar navbar-fixed-top navbar-default"  >
             <div class="navbar-inner">
@@ -48,11 +48,14 @@
         </header>
 
         <div>
-            <header class="jumbotron" id="overview">
+            <header class="jumbotron"  ng-controller="mainController">
                 <div class="container">
                     <div class="col-sm-offset-1 col-sm-11 col-md-offset-2 col-md-10">
-                        <h1>Byron Wheeler</h1>
-                        <h5>Objective: <i>To pursue further learning in a technically related field.</i></h5>
+                        <h1>{{ user.name }}</h1>
+                        <ul class="text-muted small">
+                            <li style="list-style-type: none;" ng-if="user.email"><a href="mailTo:{{ user.email}}">{{ user.email}}</a></li>
+                            <li style="list-style-type: none;" ng-if="user.location">{{ user.location}}</li>
+                        </ul>
                     </div>
                 </div>
             </header>
@@ -60,53 +63,26 @@
             <div class="container" >
                 <div class="row">
                     <div class=" col-sm-12  col-md-12">
-                        
-                        <section id="education" ng-controller="educationController">
-                            <h1 class="page-header">Education</h1>
-                            <div class="list-group">
-                                <div ng-repeat="education in educations" >
-                                    <div class="pull-right">
-                                        <div >{{education.completionDate}}</div>
-                                        <div  ng-if="education.GPA">GPA: {{education.GPA}}</div>
-                                    </div>
-                                    <h3 class="list-group-item-heading">{{education.school}}</h3>
-                                    <p class="list-group-item-text">{{education.degree}}, {{education.major}}</p>
-                                    <br>
-                                </div>
-                            </div>
-                        </section>
 
-                        <section id="skills" ng-controller="skillsController">
-                            <h1 class="page-header">Skills</h1>
-                            <ul ng-repeat="skill in skills | orderBy: '-title'">
-                                <li>
-                                    <h4>{{skill.title}}</h4>
-                                    <ul ng-repeat="skillType in skill.skillTypes">
-                                        <li >{{skillType.name}}</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </section>
-
-                        <section id="repositories" ng-controller="repoController">
+                        <section id="repositories" ng-controller="mainController">
                             
                             <h1 class="page-header">Github Projects</h1>
                             <p class="text-muted">
                                 <input class="form-control" autofocus="autofocus" style="max-width: 15em; display: inline-block;" ng-model="searchText" placeholder="search...">
-                                {{(repositories| filter:searchText).length}} repositories
+                                {{(repos| filter:searchText).length}} repositories
                             </p>
                             <div class="list-group">
-                                <div ng-repeat="repo in repositories| filter:searchText | orderBy: 'title'"  class="list-group-item">
+                                <div ng-repeat="repo in repos| filter:searchText | orderBy: 'name'"  class="list-group-item">
                                     <p class="pull-right">
-                                        <a href="{{repo.src}}" title="title / Demo page" ng-if="repo.src"><i class="fa fa-3x fa-github-square"></i></a>
+                                        <a href="{{repo.url}}" title="name / Demo page" ng-if="repo.url"><i class="fa fa-3x fa-github-square"></i></a>
                                     </p>
-                                    <h3 class="list-group-item-heading">{{repo.title}}</h3>
-                                    <p class="list-group-item-text text-muted">{{repo.desc}}</p>
-                                    <p class="list-group-item-text text-muted">{{repo.language}}</p>
+                                    <h3 class="list-group-item-heading">{{repo.name}}</h3>
+                                    <p class="list-group-item-text text-muted" ng-if="repo.language">Primary language: {{ repo.language }}</p>
+                                    <p class="list-group-item-text text-muted" ng-if="repo.description">Description: {{ repo.description }}</p>
                                 </div>
                             </div>
                         </section>
-
+<!--
                         <section id="workexp">
                             <h1 class="page-header">Work Experience</h1>
                         </section>
@@ -124,6 +100,7 @@
                                 </ul>
                             </div>
                         </section>
+-->
                     </div>
                 </div>
             </div>
@@ -131,6 +108,8 @@
         </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-        <script src="app/js/app.js"></script>
+
+
+        <script src="app/js/controllers/mainController.js"></script>
     </body>
 </html>

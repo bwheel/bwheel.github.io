@@ -5,7 +5,7 @@
             "name": "Launch index.html with sourcemaps",
             "type": "chrome",
             "request": "launch",
-            "file": "${workspaceRoot}/views/index.html",
+            "file": "${workspaceRoot}/index.html",
             "sourceMaps": true,
             "webRoot": "${workspaceRoot}"
         },
