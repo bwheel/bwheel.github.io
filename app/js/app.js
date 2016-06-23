@@ -2,6 +2,12 @@
 
     var App = angular.module('App', []);
     
+    App.controller('mainController', function($scope, $http){
+        $http.get("https://api.github.com/users/bwheel")
+        .then(function(res){
+            $scope.user = res.data
+        });
+    });
 
     App.controller('educationController', function($scope, $http){
         $http.get('data/education.json')
