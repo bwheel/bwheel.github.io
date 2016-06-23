@@ -10,9 +10,19 @@
             $scope.error = reason;
         };
 
+        var onLanguageComplete = function(response)
+        {
+            $scope.languages = [];
+            for(var lang in response.data){
+                $scope.languages.push(lang);
+            };
+        }
+
         // Save the repositories.
         var onRepoComplete = function(response){
             $scope.repos = response.data;
+            $http.get(response.data.languages_url)
+            .then(onLanguageComplete, onError);
         };
 
         // Save the User information.
@@ -25,6 +35,8 @@
         // GET the User and Repo information from GitHub.
         $http.get("https://api.github.com/users/bwheel")
         .then(onUserComplete, onError);
+
+
     };
 
     //Apply the controller to Angular JS

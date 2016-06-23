@@ -77,30 +77,13 @@
                                         <a href="{{repo.url}}" title="name / Demo page" ng-if="repo.url"><i class="fa fa-3x fa-github-square"></i></a>
                                     </p>
                                     <h3 class="list-group-item-heading">{{repo.name}}</h3>
-                                    <p class="list-group-item-text text-muted" ng-if="repo.language">Primary language: {{ repo.language }}</p>
+                                    {{ languages }}
+                                    <p class="list-group-item-text text-muted" ng-if="languages">languages: <span ng-repeat="language in languages track by $index">{{ language }}</span></p>
                                     <p class="list-group-item-text text-muted" ng-if="repo.description">Description: {{ repo.description }}</p>
                                 </div>
                             </div>
                         </section>
-<!--
-                        <section id="workexp">
-                            <h1 class="page-header">Work Experience</h1>
-                        </section>
 
-                        <section id="awards" ng-controller="awardController">
-                            <h1 class="page-header">Awards</h1>
-
-                            <div class="clearfix">
-                                <ul ng-repeat="award in awards | orderBy: 'date'">
-                                    <li>
-                                        <h3 >{{award.title}}</h3>
-                                        {{award.organization}}<p class="pull-right">{{award.date}}</p>
-                                        
-                                    </li>
-                                </ul>
-                            </div>
-                        </section>
--->
                     </div>
                 </div>
             </div>
@@ -108,8 +91,6 @@
         </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-
-
         <script src="app/js/controllers/mainController.js"></script>
     </body>
 </html>
