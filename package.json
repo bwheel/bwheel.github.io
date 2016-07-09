@@ -1,0 +1,21 @@
+{
+  "name": "bwheel.github.io",
+  "version": "1.0.0",
+  "description": "Home page for Byron Wheeler",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bwheel/bwheel.github.io.git"
+  },
+  "author": "Byron Wheeler",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bwheel/bwheel.github.io/issues"
+  },
+  "dependencies": {
+    "http-server": "~0.9.0"
+  }
+}
